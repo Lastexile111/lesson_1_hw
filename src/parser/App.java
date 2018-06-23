@@ -33,7 +33,7 @@ public class App {
             if(chArray.length != 0){
 
                 int firstIndex = 0;
-                int finalIndex = 0;
+                int finalIndex;
                 int count = 0;
                 for(int j = 0; j < chArray.length; j++) {
                     //находим пробел
@@ -63,7 +63,6 @@ public class App {
                     }
 
                 }
-
                 System.out.println(i +" > " + newPerson);
             }
 
