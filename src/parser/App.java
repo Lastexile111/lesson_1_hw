@@ -23,6 +23,10 @@ public class App {
             Person pers = new Person();
             Class person = pers.getClass();
 
+            Person newPerson = (Person) person.newInstance();
+//            final Constructor constructor = person.getDeclaredConstructor();
+//            final Object  o = constructor.newInstance();
+
             String line = scan.nextLine();
             char[] chArray = line.toCharArray();
 
@@ -39,30 +43,28 @@ public class App {
                         if(count == 0) {
                             Field arg1Field = person.getDeclaredField("arg1");
                             arg1Field.setAccessible(true);
-                            arg1Field.set(pers, line.substring(firstIndex, finalIndex) );
+                            arg1Field.set(newPerson, line.substring(firstIndex, finalIndex) );
 
                         }
 
                         if(count == 1) {
                             Field arg2Field = person.getDeclaredField("arg2");
                             arg2Field.setAccessible(true);
-                            arg2Field.set(pers, line.substring(firstIndex, finalIndex));
+                            arg2Field.set(newPerson, line.substring(firstIndex, finalIndex));
                         }
 
                         if(count == 2) {
                             Field arg3Field = person.getDeclaredField("arg3");
                             arg3Field.setAccessible(true);
-                            arg3Field.set(pers, line.substring(firstIndex, chArray.length));
+                            arg3Field.set(newPerson, line.substring(firstIndex, chArray.length));
                         }
                         count += 1;
                         firstIndex = finalIndex;
                     }
 
                 }
-                Person newPerson = (Person) person.newInstance();
-                final Constructor constructor = person.getDeclaredConstructor();
-                final Object  o = constructor.newInstance();
-                System.out.println(i +" > " + pers.toString());
+
+                System.out.println(i +" > " + newPerson);
             }
 
 
