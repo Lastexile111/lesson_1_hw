@@ -5,6 +5,7 @@ public class Person {
     private String arg2;
     private String arg3;
 
+    int[] a = {1,2,2,3};
 
 
     @Override
