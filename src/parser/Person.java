@@ -7,6 +7,7 @@ public class Person {
 
     int[] a = {1,2,2,3};
 
+    int a1 = 1;
 
     @Override
     public String toString() {

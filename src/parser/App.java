@@ -20,7 +20,7 @@ import java.util.*;
  */
 public class App {
 
-    public static void main(String[] args) throws IllegalAccessException, NoSuchFieldException, InstantiationException, IOException, NoSuchMethodException, InvocationTargetException {
+    public static void main(String[] args) throws IllegalAccessException,  IOException{
         FileReader fr= new FileReader("Persons.txt");
         Scanner scan = new Scanner(fr);
 
@@ -92,9 +92,9 @@ public class App {
             result += field.getName() + " = ";
             if (field.getType().isPrimitive() == true) {
 
-                if (field.get(object) != null){
-                    continue;
-                }
+//                if (field.get(object) != null){
+//                    continue;
+//                }
                 result += field.get(object);
 
             }else if(field.getType().isArray() == true){
